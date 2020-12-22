@@ -18,7 +18,7 @@ public class App extends Application {
         Label label = new Label("Weather");
         BorderPane pane = new BorderPane();
         label.setAlignment(Pos.CENTER);
-        pane.getChildren().add(label);
+        pane.setCenter(label);
         stage.setScene(new Scene(  pane,800, 800));
         stage.setTitle("Weather App");
         stage.show();
