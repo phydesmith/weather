@@ -1,14 +1,14 @@
 package io.javasmithy.geo;
 
 public class Geopoint {
-    String zipcode;
     String latitude;
     String longitude;
 
-    public Geopoint(String zipcode){
-        this.zipcode = zipcode;
-        this.latitude = "0";
-        this.longitude = "0";
+    public Geopoint(){}
+
+    public Geopoint(String latitude, String longitude){
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getLatitude(){
