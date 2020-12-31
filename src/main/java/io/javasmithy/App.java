@@ -1,11 +1,15 @@
 package io.javasmithy;
 
+import io.javasmithy.controllers.MainController;
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
+
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+
+import java.io.IOException;
+
 
 public class App extends Application {
 
@@ -15,13 +19,15 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        Label label = new Label("Weather");
-        BorderPane pane = new BorderPane();
-        label.setAlignment(Pos.CENTER);
-        pane.setCenter(label);
-        stage.setScene(new Scene(  pane,800, 800));
-        stage.setTitle("Weather App");
-        stage.show();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main-layout.fxml"));
+            stage.setScene(new Scene( (Parent) loader.load(), 800, 800));
+            ((MainController)loader.getController()).setStage(stage);
+            stage.setTitle("Weather Forecast");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

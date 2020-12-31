@@ -40,6 +40,13 @@
       <artifactId>javafx-graphics</artifactId>
       <version>14</version>
     </dependency>
+    <!--  Gson: Java to Json conversion -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.6</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -109,6 +116,7 @@
             <jlinkImageName>Weather</jlinkImageName>
             <jlinkZipName>Weather</jlinkZipName>
             <mainClass>io.javasmithy.AppEntry</mainClass>
+            <commandlineArgs>-Djavax.net.debug=all</commandlineArgs>
           </configuration>
         </plugin>
         <!-- Shade Plugin -->
