@@ -43,8 +43,7 @@ public class Requester {
             return this.client.send(request, HttpResponse.BodyHandlers.ofString()).body();
         } catch (IOException | InterruptedException e){
             e.printStackTrace();
-            return "Error" +
-                    "";
+            return "Error";
         }
     }
 
