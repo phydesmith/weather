@@ -20,12 +20,7 @@ public class ForecastRequester {
                     .build();
             HttpClient client = HttpClient.newHttpClient();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            Gson gson = new Gson();
-
-            System.out.println(response.body());
-
-
-            //return response.body();
+            //Gson gson = new Gson();
             return response.body();
         } catch (InterruptedException | IOException e){
             e.printStackTrace();

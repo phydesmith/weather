@@ -1,8 +1,6 @@
 package io.javasmithy.controllers;
 
-import io.javasmithy.geo.Geopoint;
-import io.javasmithy.geo.GeopointRequester;
-import io.javasmithy.weather.ForecastRequester;
+import io.javasmithy.net.Requester;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
@@ -14,8 +12,7 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
     private Stage stage;
-    private GeopointRequester gpr;
-    private ForecastRequester forecastRequester;
+    private Requester requester;
 
     @FXML
     TextField searchField;
@@ -23,8 +20,7 @@ public class MainController implements Initializable {
     TextArea forecastTextArea;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.gpr = new GeopointRequester();
-        this.forecastRequester = new ForecastRequester();
+        this.requester = new Requester();
     }
 
     public void setStage(Stage stage){
@@ -33,10 +29,9 @@ public class MainController implements Initializable {
 
     @FXML
     public void search(){
-        Geopoint gp = this.gpr.request(searchField.getText());
         forecastTextArea.setText(
-                forecastRequester.request(
-                        this.gpr.request(
+                requester.request(
+                        this.requester.request(
                                 searchField.getText()
                         )
                 )
