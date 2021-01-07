@@ -5,6 +5,7 @@ module weather {
     requires javafx.graphics;
     requires java.net.http;
     requires com.google.gson;
+    requires java.desktop;
 
     opens io.javasmithy.controllers to javafx.base, javafx.fxml, javafx.controls, javafx.graphics, com.google.gson;
     opens io.javasmithy.geo to javafx.base, javafx.fxml, javafx.controls, javafx.graphics, com.google.gson;
