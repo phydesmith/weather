@@ -1,5 +1,6 @@
 package io.javasmithy.controllers;
 
+
 import io.javasmithy.forecast.ForecastPeriod;
 import io.javasmithy.geo.Geopoint;
 import io.javasmithy.net.Requester;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
 
 
 import java.net.URL;
