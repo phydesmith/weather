@@ -21,7 +21,7 @@ public class App extends Application {
     public void start(Stage stage) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main-layout.fxml"));
-            stage.setScene(new Scene( (Parent) loader.load(), 800, 800));
+            stage.setScene(new Scene( (Parent) loader.load(), 800, 500));
             ((MainController)loader.getController()).setStage(stage);
             stage.setTitle("Weather Forecast");
             stage.show();
