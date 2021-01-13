@@ -7,44 +7,30 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="rootPane" prefHeight="200.0" prefWidth="300.0" maxHeight="300.0" maxWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.javasmithy.controllers.MainController"
-            stylesheets="@../css/style.css">
-    <top>
-        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                    <children>
-                        <Label fx:id="searchLabel" text="Zipcode:"/>
-                        <TextField fx:id="searchField"/>
-                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" text="Search"/>
-                    </children>
-                    <HBox.margin>
-                        <Insets left="10.0" right="10.0"/>
-                    </HBox.margin>
-                </VBox>
-            </children>
-        </HBox>
-    </top>
+<BorderPane fx:id="rootPane" maxHeight="300.0" maxWidth="300.0" prefHeight="200.0" prefWidth="300.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.javasmithy.controllers.MainController">
     <left>
-        <ListView fx:id="forecastListView" onMouseClicked="#handleForecastListViewClick" prefHeight="300.0"
-                  prefWidth="350.0" BorderPane.alignment="TOP_CENTER"/>
+        <ListView fx:id="forecastListView" onMouseClicked="#handleForecastListViewClick" prefHeight="300.0" prefWidth="350.0" BorderPane.alignment="TOP_CENTER" />
     </left>
     <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
     <center>
         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="350.0" spacing="10.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="weatherImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true"
-                           preserveRatio="true"/>
-                <Label fx:id="weatherLongDescriptionLabel" wrapText="true"/>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                    <children>
+                        <Label fx:id="searchLabel" text="Zipcode:" />
+                        <TextField fx:id="searchField" maxWidth="100.0" prefWidth="100.0" />
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" text="Search" />
+                    </children>
+                </VBox>
+                <ImageView fx:id="weatherImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <Label fx:id="weatherLongDescriptionLabel" wrapText="true" />
             </children>
             <padding>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
         </VBox>
     </center>
