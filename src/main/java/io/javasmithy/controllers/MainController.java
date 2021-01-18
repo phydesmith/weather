@@ -52,7 +52,7 @@ public class MainController implements Initializable {
 
     @FXML
     public void search(){
-        Geopoint gp = this.requester.getGeopoint(searchField.getText());
+        Geopoint gp = this.requester.getGeopoint(this.searchField.getText());
         String forecastPath = this.requester.getMetaData(gp);
         this.forecastListView.setItems(this.requester.getForecastPeriods(forecastPath));
     }
@@ -66,9 +66,9 @@ public class MainController implements Initializable {
     }
     @FXML
     public void handleForecastListViewItemSelection(){
-        ForecastPeriod forecastPeriod = forecastListView.getSelectionModel().getSelectedItems().get(0);
-        weatherLongDescriptionLabel.setText(forecastPeriod.getDetailedForecast());
-        weatherImageView.setImage(this.requester.getForecastImage(forecastPeriod.getIcon()));
+        ForecastPeriod forecastPeriod = this.forecastListView.getSelectionModel().getSelectedItems().get(0);
+        this.weatherLongDescriptionLabel.setText(forecastPeriod.getDetailedForecast());
+        this.weatherImageView.setImage(this.requester.getForecastImage(forecastPeriod.getIcon()));
     }
 
 
